@@ -1,0 +1,7 @@
+name: mlflowsampleproject1
+channels:
+  - defaults
+dependencies:
+  - pip
+  - pip:
+    - cwltool==3.0.20210319143721

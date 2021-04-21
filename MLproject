@@ -1,0 +1,9 @@
+name: mlflowsampleproject1
+conda_env: conda.yaml
+entry_points:
+  main: # fastqc_trmming:
+      #parameters:
+      #    fq1: {type: string, default: ""}
+      #    fq2: {type: string, default: ""}
+      #    ntrheads: {type: int, default: 1}
+      command: "cwltool https://raw.githubusercontent.com/ddbj/sapporo-service/master/tests/resources/cwltool/trimming_and_qc_remote.cwl --fastq_1 DRR024501_1.fastq  --fastq_2 DRR024501_2.fastq --nthreads 1"

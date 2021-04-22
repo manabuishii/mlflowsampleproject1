@@ -1,9 +1,22 @@
 name: mlflowsampleproject1
 conda_env: conda.yaml
 entry_points:
+  download_data:
+    parameters:
+      fq1: {type: string, default: "https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/test/data/DRR024501_1.fastq"}
+      fq2: {type: string, default: "https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/test/data/DRR024501_2.fastq"}
+      nthreads: {type: int, default: 1}
+    command: "python download_data.py --fq1 {fq1} --fq2 {fq2} --nthreads {nthreads}"
+  fastqc_trimming:
+    parameters:
+      fq1: {type: string, default: "https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/test/data/DRR024501_1.fastq"}
+      fq2: {type: string, default: "https://raw.githubusercontent.com/pitagora-network/DAT2-cwl/develop/test/data/DRR024501_2.fastq"}
+      download_run_id : {type: str, default: ""}
+
+    command: "python fastqc_trimming.py --fq1 {fq1} --fq2 {fq2} --download_run_id {download_run_id}"
   main: # fastqc_trmming:
-      #parameters:
-      #    fq1: {type: string, default: ""}
-      #    fq2: {type: string, default: ""}
-      #    ntrheads: {type: int, default: 1}
-      command: "cwltool https://raw.githubusercontent.com/ddbj/sapporo-service/master/tests/resources/cwltool/trimming_and_qc_remote.cwl --fastq_1 DRR024501_1.fastq  --fastq_2 DRR024501_2.fastq --nthreads 1"
+    #parameters:
+    #    fq1: {type: string, default: ""}
+    #    fq2: {type: string, default: ""}
+    #    ntrheads: {type: int, default: 1}
+    command: "cwltool https://raw.githubusercontent.com/ddbj/sapporo-service/master/tests/resources/cwltool/trimming_and_qc_remote.cwl --fastq_1 DRR024501_1.fastq  --fastq_2 DRR024501_2.fastq --nthreads 1"

@@ -5,3 +5,5 @@ dependencies:
   - pip
   - pip:
     - cwltool==3.0.20210319143721
+    - mlflow==1.15.0
+    - boto3

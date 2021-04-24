@@ -8,7 +8,9 @@ MLFlow Sample Project
 
 ## git clone
 
-
+```
+git clone https://github.com/manabuishii/mlflowsampleproject1.git
+```
 
 ## Setup mlflow environment
 

@@ -6,6 +6,10 @@ MLFlow Sample Project
 - conda
 - docker
 
+## git clone
+
+
+
 ## Setup mlflow environment
 
 ```
@@ -32,4 +36,10 @@ Output
 
 ```
 mlflow run -e fastqc_trimming . -P download_run_id=cdcf6e9bbfc34e07922c8a6e803b019e
+```
+
+### Run without clone
+
+```
+mlflow run -e download_data https://github.com/manabuishii/mlflowsampleproject1 --version main
 ```
